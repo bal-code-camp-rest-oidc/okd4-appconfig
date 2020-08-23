@@ -5,7 +5,7 @@ OpenShift deployment configuration, deployed in the [Baloise Incubator](https://
 
 |namespace|status
 |-|-|
-|tbd|[![App Status](https://argocd.baloise.dev/api/badge?name=tbd)](https://argocd.baloise.dev/applications/tbd)|
+|okd4-sampleconfig|[![App Status](https://argocd.baloise.dev/api/badge?name=okd4-sampleconfig&revision=true)](https://argocd.baloise.dev/api/badge?name=okd4-sampleconfig&revision=true)|
 
 ## Setup
 In order to work, this repository needs to be referenced in the corresponding team's root configuration yaml in the [okd34-apps-root-config](https://github.com/baloise-incubator/okd4-apps-root-config) repository.
