@@ -1,4 +1,4 @@
-spring-keycloak-demo:
+okd4-demo:
   image:
     repository: registry.baloise.dev/example/gitops-nginx-demo
     tag: latest
@@ -7,4 +7,4 @@ spring-keycloak-demo:
     http:
       servicePort: 8080
       ingress:
-        host: demo-test.apps.baloise.dev
+        host: bvcc2020-demo-test.apps.baloise.dev
