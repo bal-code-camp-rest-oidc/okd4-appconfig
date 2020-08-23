@@ -1,5 +1,5 @@
 apiVersion: v2
-name: spring-keycloak-demo
+name: okd4-sampleconfig
 dependencies:
   - name: generic-chart
     version: 2.0.0
