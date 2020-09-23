@@ -12,5 +12,5 @@ spec:
   keycloakDeploymentSpec:
     resources:
       requests:
-        cpu: 500m
+        cpu: 1
         memory: 2Gi
