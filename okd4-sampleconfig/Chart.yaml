@@ -6,3 +6,6 @@ dependencies:
     version: 2.0.0
     repository: https://registry.baloise.dev/chartrepo/library
     alias: okd4-demo
+  - name: keycloak
+    version: 9.1.0
+    alias: okd4-library-keycloak

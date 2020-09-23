@@ -8,3 +8,6 @@ okd4-demo:
       servicePort: 8080
       ingress:
         host: bvcc2020-demo-test.apps.baloise.dev
+okd4-library-keycloak:
+  route:
+    enabled: false
