@@ -1,0 +1,16 @@
+apiVersion: keycloak.org/v1alpha1
+kind: Keycloak
+metadata:
+  name: library-keycloak
+  labels:
+    app: sso
+  namespace: okd4-sampleconfig
+spec:
+  externalAccess:
+    enabled: true
+  instances: 1
+  keycloakDeploymentSpec:
+    resources:
+      requests:
+        cpu: 500m
+        memory: 2Gi
