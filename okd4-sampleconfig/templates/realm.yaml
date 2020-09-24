@@ -11,20 +11,21 @@ spec:
     enabled: True
     displayName: "Workshop"
     roles:
-    - id: b63e2bff-d9bf-4f94-bde9-c097d9e0a531
-      name: library_curator
-      description: Library curator
-      composite: false
-      clientRole: false
-      containerId: c55c6f57-cc91-464c-b9be-119cdf1aac3f
-      attributes: {}
-    - id: 8b61bbdb-913a-4874-b385-09b357c022ae
-      name: uma_authorization
-      description: "${role_uma_authorization}"
-      composite: false
-      clientRole: false
-      containerId: c55c6f57-cc91-464c-b9be-119cdf1aac3f
-      attributes: {}
+      realm:
+      - id: b63e2bff-d9bf-4f94-bde9-c097d9e0a531
+        name: library_curator
+        description: Library curator
+        composite: false
+        clientRole: false
+        containerId: c55c6f57-cc91-464c-b9be-119cdf1aac3f
+        attributes: {}
+      - id: 8b61bbdb-913a-4874-b385-09b357c022ae
+        name: uma_authorization
+        description: "${role_uma_authorization}"
+        composite: false
+        clientRole: false
+        containerId: c55c6f57-cc91-464c-b9be-119cdf1aac3f
+        attributes: {}
   instanceSelector:
     matchLabels:
       app: sso
