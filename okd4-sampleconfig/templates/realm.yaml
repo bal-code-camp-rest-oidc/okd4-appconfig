@@ -1,0 +1,15 @@
+apiVersion: keycloak.org/v1alpha1
+kind: KeycloakRealm
+metadata:
+  name: workshop-keycloakrealm
+  labels:
+    app: sso
+spec:
+  realm:
+    id: "c55c6f57-cc91-464c-b9be-119cdf1aac3f"
+    realm: "workshop"
+    enabled: True
+    displayName: "Workshop"
+  instanceSelector:
+    matchLabels:
+      app: sso
