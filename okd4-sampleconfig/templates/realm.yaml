@@ -5,7 +5,8 @@ metadata:
   labels:
     app: sso
 spec:
-  realm: [
+  realm: > 
+    [{
       "id" : "c55c6f57-cc91-464c-b9be-119cdf1aac3f",
       "realm" : "workshop",
       "notBefore" : 1571836504,
@@ -1983,7 +1984,7 @@ spec:
       },
       "keycloakVersion" : "8.0.1",
       "userManagedAccessAllowed" : false
-    ]
+    }]
   instanceSelector:
     matchLabels:
       app: sso
