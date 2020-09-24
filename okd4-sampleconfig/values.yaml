@@ -8,4 +8,19 @@ okd4-demo:
       servicePort: 8080
       ingress:
         host: bvcc2020-demo-test.apps.baloise.dev
-
+library-server:
+  image:
+    repository: luechtdiode/oidc-ws-library-server
+    tag: d2df9d37b50ae7d37727417938b11fde5b7d8745
+  replicaCount: 1
+  network:
+    http:
+      servicePort: 9091
+      ingress:
+        host: bvcc2020-library-server.apps.baloise.dev
+  env:
+  - name: JWK_SET_URI
+    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop/protocol/openid-connect/certs
+  - name: ISSUER_URI
+    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
+    
