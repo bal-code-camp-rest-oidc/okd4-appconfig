@@ -23,4 +23,21 @@ library-server:
     value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop/protocol/openid-connect/certs
   - name: ISSUER_URI
     value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
-    
+
+library-client:
+  image:
+    repository: luechtdiode/oidc-ws-library-client
+    tag: a021cc8ed987705ff38c78ea14b54c316d8c9aad
+  replicaCount: 1
+  network:
+    http:
+      servicePort: 9090
+      ingress:
+        host: bvcc2020-library-client.apps.baloise.dev
+  env:
+  - name: CLIENT_ID
+    value: library-client-pkce
+  - name: ISSUER_URI
+    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
+  - name: SERVER_URL
+    value: library-server
