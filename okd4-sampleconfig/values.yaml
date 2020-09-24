@@ -40,4 +40,4 @@ library-client:
   - name: ISSUER_URI
     value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
   - name: SERVER_URL
-    value: library-server
+    value: /library-server/library-server
