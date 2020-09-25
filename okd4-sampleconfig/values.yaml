@@ -41,3 +41,17 @@ library-client:
     value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
   - name: SERVER_URL
     value: http://library-server:9091/library-server
+
+library-inventory-service:
+  image:
+    repository: luechtdiode/oidc-ws-library-inventory-service
+    tag: latest
+  replicaCount: 1
+  network:
+    http:
+      servicePort: 9092
+  env:
+  - name: JWK_SET_URI
+    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop/protocol/openid-connect/certs
+  - name: ISSUER_URI
+    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
