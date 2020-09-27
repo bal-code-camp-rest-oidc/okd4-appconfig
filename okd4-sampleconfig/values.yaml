@@ -108,9 +108,9 @@ library-user-server:
     http:
       servicePort: 9093
   env:
-  - name: CLIENT_ID
+  - name: KEYCLOAK_CLIENT_ID
     value: keycloak-admin
-  - name: CLIENT_SECRET
+  - name: KEYCLOAK_CLIENT_SECRET
     valueFrom:
       secretKeyRef:
         name: library-keycloak-admin-secret
@@ -123,7 +123,14 @@ library-user-server:
     value: workshop  
   - name: KEYCLOAK_SERVER_URI
     value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth
-
+  - name: SWAGGER_CLIENT_ID
+    value: keycloak-admin
+  - name: SWAGGER_CLIENT_SECRET
+    valueFrom:
+      secretKeyRef:
+        name: library-keycloak-admin-secret
+        key: password
+        
 library-borrow-service:
   image:
     repository: luechtdiode/oidc-ws-library-borrow-service
