@@ -17,4 +17,20 @@ dependencies:
   - name: generic-chart
     version: 2.0.0
     repository: https://registry.baloise.dev/chartrepo/library
-    alias: library-inventory-service  
+    alias: library-inventory-service
+  - name: generic-chart
+    version: 2.0.0
+    repository: https://registry.baloise.dev/chartrepo/library
+    alias: library-facade-server
+  - name: generic-chart
+    version: 2.0.0
+    repository: https://registry.baloise.dev/chartrepo/library
+    alias: library-frontend
+  - name: generic-chart
+    version: 2.0.0
+    repository: https://registry.baloise.dev/chartrepo/library
+    alias: library-user-server
+  - name: generic-chart
+    version: 2.0.0
+    repository: https://registry.baloise.dev/chartrepo/library
+    alias: library-borrow-service
