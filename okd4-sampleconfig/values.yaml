@@ -54,7 +54,7 @@ library-facade-server:
     http:
       servicePort: 9090
       ingress:
-        host: bvcc2020-library-server.apps.baloise.dev
+        host: bvcc2020-library-facade-server.apps.baloise.dev
   env:
   - name: JWK_SET_URI
     value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop/protocol/openid-connect/certs
@@ -76,7 +76,7 @@ library-frontend:
     http:
       servicePort: 9090
       ingress:
-        host: bvcc2020-library-client.apps.baloise.dev
+        host: bvcc2020-library-frontend.apps.baloise.dev
   env:
   - name: CLIENT_ID
     value: library-client-pkce
