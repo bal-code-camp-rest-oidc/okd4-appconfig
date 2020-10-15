@@ -45,6 +45,24 @@ library-client:
 
 # Service Scenario
 
+library-frontend:
+  image:
+    repository: luechtdiode/oidc-ws-library-frontend
+    tag: latest
+  replicaCount: 1
+  network:
+    http:
+      servicePort: 9090
+      ingress:
+        host: bvcc2020-library-frontend.apps.baloise.dev
+  env:
+  - name: CLIENT_ID
+    value: library-client-pkce
+  - name: ISSUER_URI
+    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
+  - name: SERVER_URL
+    value: http://library-facade-server:9090/library-server
+
 library-facade-server:
   image:
     repository: luechtdiode/oidc-ws-library-facade-server
@@ -66,24 +84,6 @@ library-facade-server:
     value: http://library-user-service:9093/library-users
   - name: BORROW_SERVICE_URI
     value: http://library-borrow-service:9091/library-borrow
-
-library-frontend:
-  image:
-    repository: luechtdiode/oidc-ws-library-frontend
-    tag: latest
-  replicaCount: 1
-  network:
-    http:
-      servicePort: 9090
-      ingress:
-        host: bvcc2020-library-frontend.apps.baloise.dev
-  env:
-  - name: CLIENT_ID
-    value: library-client-pkce
-  - name: ISSUER_URI
-    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
-  - name: SERVER_URL
-    value: http://library-facade-server:9090/library-server
 
 library-inventory-service:
   image:
@@ -144,7 +144,4 @@ library-borrow-service:
     value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop/protocol/openid-connect/certs
   - name: ISSUER_URI
     value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
-  - name: INVENTORY_SERVICE_URI
-    value: http://library-inventory-service:9092/library-inventory
-  - name: USER_SERVICE_URI
-    value: http://library-user-service:9093/library-users    
+   
