@@ -1,13 +1,3 @@
-okd4-demo:
-  image:
-    repository: registry.baloise.dev/example/gitops-nginx-demo
-    tag: latest
-  replicaCount: 1
-  network:
-    http:
-      servicePort: 8080
-      ingress:
-        host: bvcc2020-demo-test.apps.baloise.dev
 library-server:
   image:
     repository: luechtdiode/oidc-ws-library-server
@@ -48,7 +38,7 @@ library-client:
 library-frontend:
   image:
     repository: luechtdiode/oidc-ws-library-frontend
-    tag: latest
+    tag: 2290c356fc525888ce8e3559778fc4f805b3d957
   replicaCount: 1
   network:
     http:
@@ -66,7 +56,7 @@ library-frontend:
 library-facade-server:
   image:
     repository: luechtdiode/oidc-ws-library-facade-server
-    tag: latest
+    tag: 2290c356fc525888ce8e3559778fc4f805b3d957
   replicaCount: 1
   network:
     http:
@@ -78,17 +68,31 @@ library-facade-server:
     value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop/protocol/openid-connect/certs
   - name: ISSUER_URI
     value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
+  - name: BORROW_SERVICE_URI
+    value: http://library-borrow-service:9091/library-borrow
   - name: INVENTORY_SERVICE_URI
     value: http://library-inventory-service:9092/library-inventory
   - name: USER_SERVICE_URI
-    value: http://library-user-service:9093/library-users
-  - name: BORROW_SERVICE_URI
-    value: http://library-borrow-service:9091/library-borrow
+    value: http://library-user-server:9093/library-users
 
+library-borrow-service:
+  image:
+    repository: luechtdiode/oidc-ws-library-borrow-service
+    tag: 2290c356fc525888ce8e3559778fc4f805b3d957
+  replicaCount: 1
+  network:
+    http:
+      servicePort: 9091
+  env:
+  - name: JWK_SET_URI
+    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop/protocol/openid-connect/certs
+  - name: ISSUER_URI
+    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
+   
 library-inventory-service:
   image:
     repository: luechtdiode/oidc-ws-library-inventory-service
-    tag: latest
+    tag: 2290c356fc525888ce8e3559778fc4f805b3d957
   replicaCount: 1
   network:
     http:
@@ -102,7 +106,7 @@ library-inventory-service:
 library-user-server:
   image:
     repository: luechtdiode/oidc-ws-library-user-server
-    tag: latest
+    tag: 2290c356fc525888ce8e3559778fc4f805b3d957
   replicaCount: 1
   network:
     http:
@@ -124,24 +128,10 @@ library-user-server:
   - name: KEYCLOAK_SERVER_URI
     value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth
   - name: SWAGGER_CLIENT_ID
-    value: keycloak-admin
+    value: library-client
   - name: SWAGGER_CLIENT_SECRET
     valueFrom:
       secretKeyRef:
-        name: library-keycloak-admin-secret
+        name: library-keycloak-user-secret
         key: password
         
-library-borrow-service:
-  image:
-    repository: luechtdiode/oidc-ws-library-borrow-service
-    tag: latest
-  replicaCount: 1
-  network:
-    http:
-      servicePort: 9091
-  env:
-  - name: JWK_SET_URI
-    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop/protocol/openid-connect/certs
-  - name: ISSUER_URI
-    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
-   
