@@ -7,6 +7,13 @@ OpenShift deployment configuration, deployed in the [Baloise Incubator](https://
 |-|-|
 |okd4-sampleconfig|[![App Status](https://argocd.baloise.dev/api/badge?name=okd4-sampleconfig&revision=true)](https://argocd.baloise.dev/api/badge?name=okd4-sampleconfig&revision=true)|
 
+## App-Entrypoints
+|App|Link|
+|-|-|
+|Keycloak|(https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/)[https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/]|
+|Simple Library-Client| (https://bvcc2020-library-client.apps.baloise.dev/library-client/)[https://bvcc2020-library-client.apps.baloise.dev/library-client/]|
+|Scenario Library-Client| (https://bvcc2020-library-frontend.apps.baloise.dev/library-client/)[https://bvcc2020-library-frontend.apps.baloise.dev/library-client/]|
+
 ## Setup
 In order to work, this repository needs to be referenced in the corresponding team's root configuration yaml in the [okd34-apps-root-config](https://github.com/baloise-incubator/okd4-apps-root-config) repository.
 See the [respository property in the configuration](https://github.com/baloise-incubator/okd4-apps-root-config/blob/master/apps/okd4-example-apps.yaml#L1).
