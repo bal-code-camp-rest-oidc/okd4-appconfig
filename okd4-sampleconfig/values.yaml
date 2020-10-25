@@ -40,6 +40,7 @@ library-frontend:
     repository: luechtdiode/oidc-ws-library-frontend
     tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
   replicaCount: 1
+  imagePullPolicy: Allways
   network:
     http:
       servicePort: 9090
@@ -58,6 +59,7 @@ library-facade-server:
     repository: luechtdiode/oidc-ws-library-facade-server
     tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
   replicaCount: 1
+  imagePullPolicy: Allways
   network:
     http:
       servicePort: 9090
@@ -80,6 +82,7 @@ library-borrow-service:
     repository: luechtdiode/oidc-ws-library-borrow-service
     tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
   replicaCount: 1
+  imagePullPolicy: Allways
   network:
     http:
       servicePort: 9091
@@ -94,6 +97,7 @@ library-inventory-service:
     repository: luechtdiode/oidc-ws-library-inventory-service
     tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
   replicaCount: 1
+  imagePullPolicy: Allways
   network:
     http:
       servicePort: 9092
@@ -108,6 +112,7 @@ library-user-server:
     repository: luechtdiode/oidc-ws-library-user-server
     tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
   replicaCount: 1
+  imagePullPolicy: Allways
   network:
     http:
       servicePort: 9093
