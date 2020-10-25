@@ -38,7 +38,7 @@ library-client:
 library-frontend:
   image:
     repository: luechtdiode/oidc-ws-library-frontend
-    tag: 2290c356fc525888ce8e3559778fc4f805b3d957
+    tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
   replicaCount: 1
   network:
     http:
@@ -56,7 +56,7 @@ library-frontend:
 library-facade-server:
   image:
     repository: luechtdiode/oidc-ws-library-facade-server
-    tag: 605fd3909d8e0ff3fc73062e808de7bae69454c2
+    tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
   replicaCount: 1
   network:
     http:
@@ -78,7 +78,7 @@ library-facade-server:
 library-borrow-service:
   image:
     repository: luechtdiode/oidc-ws-library-borrow-service
-    tag: 605fd3909d8e0ff3fc73062e808de7bae69454c2
+    tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
   replicaCount: 1
   network:
     http:
@@ -92,7 +92,7 @@ library-borrow-service:
 library-inventory-service:
   image:
     repository: luechtdiode/oidc-ws-library-inventory-service
-    tag: 605fd3909d8e0ff3fc73062e808de7bae69454c2
+    tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
   replicaCount: 1
   network:
     http:
@@ -106,7 +106,7 @@ library-inventory-service:
 library-user-server:
   image:
     repository: luechtdiode/oidc-ws-library-user-server
-    tag: 605fd3909d8e0ff3fc73062e808de7bae69454c2
+    tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
   replicaCount: 1
   network:
     http:
