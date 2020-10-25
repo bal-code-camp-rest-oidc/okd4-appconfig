@@ -38,7 +38,7 @@ library-client:
 library-frontend:
   image:
     repository: luechtdiode/oidc-ws-library-frontend
-    tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
+    tag: 2ace0b86d62f179677937f2ddc1c459c19404658
   replicaCount: 1
   imagePullPolicy: Always
   network:
@@ -57,7 +57,7 @@ library-frontend:
 library-facade-server:
   image:
     repository: luechtdiode/oidc-ws-library-facade-server
-    tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
+    tag: 2ace0b86d62f179677937f2ddc1c459c19404658
   replicaCount: 1
   imagePullPolicy: Always
   network:
@@ -80,7 +80,7 @@ library-facade-server:
 library-borrow-service:
   image:
     repository: luechtdiode/oidc-ws-library-borrow-service
-    tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
+    tag: 2ace0b86d62f179677937f2ddc1c459c19404658
   replicaCount: 1
   imagePullPolicy: Always
   network:
@@ -95,7 +95,7 @@ library-borrow-service:
 library-inventory-service:
   image:
     repository: luechtdiode/oidc-ws-library-inventory-service
-    tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
+    tag: 2ace0b86d62f179677937f2ddc1c459c19404658
   replicaCount: 1
   imagePullPolicy: Always
   network:
@@ -110,7 +110,7 @@ library-inventory-service:
 library-user-server:
   image:
     repository: luechtdiode/oidc-ws-library-user-server
-    tag: 1eb1e5c6d0f7db8b08a02c32324f3284f835dfc9
+    tag: 2ace0b86d62f179677937f2ddc1c459c19404658
   replicaCount: 1
   imagePullPolicy: Always
   network:
